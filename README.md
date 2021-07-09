@@ -1,6 +1,8 @@
 # obsTitleNodejs
 web app para el obs Studio / socket.io / Express / SASS / NodeJS
 
+![OBS](/OBS.png)
+
 # forma de uso..
 * instalar SASS (https://sass-lang.com/install)
 * git clone https://github.com/afimpel/obsTitleNodejs.git
@@ -11,4 +13,3 @@ web app para el obs Studio / socket.io / Express / SASS / NodeJS
 
 ## Para setear los Titulos y la opciones...
 * entrar por el navegador web: http://localhost:9090/settings.html
-
