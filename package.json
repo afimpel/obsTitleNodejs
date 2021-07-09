@@ -1,0 +1,16 @@
+{
+  "name": "obs-graf",
+  "version": "1.0.0",
+  "description": "training!",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodejs server.js",
+    "watch": "sass --style=compressed --no-source-map -w scss:public/css & nodejs server.js"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "nocache": "^3.0.1",
+    "socket.io": "^2.2.0"
+  },
+  "keywords": []
+}
