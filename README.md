@@ -2,8 +2,8 @@
 web app para el obs Studio / socket.io / Express / SASS / NodeJS
 
 # forma de uso..
-
-* clonar este repo.
+* instalar SASS (https://sass-lang.com/install)
+* git clone https://github.com/afimpel/obsTitleNodejs.git
 * cd obsTitleNodejs/
 * npm i
 * **npm start** o **npm run watch** (si queres editando para ver lo que vas editando...)
