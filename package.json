@@ -1,5 +1,5 @@
 {
-  "name": "obsTitleNodejs",
+  "name": "obs-title-nodejs",
   "version": "1.0.0",
   "description": "training!",
   "main": "server.js",
