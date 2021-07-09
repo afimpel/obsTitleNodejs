@@ -12,5 +12,5 @@
     "nocache": "^3.0.1",
     "socket.io": "^2.2.0"
   },
-  "keywords": ['nodejs','express','socket.io']
+  "keywords": []
 }
