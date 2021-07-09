@@ -1,10 +1,10 @@
 {
-  "name": "obs-graf",
+  "name": "obsTitleNodejs",
   "version": "1.0.0",
   "description": "training!",
   "main": "server.js",
   "scripts": {
-    "start": "nodejs server.js",
+    "start": "sass --style=compressed --no-source-map scss:public/css; nodejs server.js",
     "watch": "sass --style=compressed --no-source-map -w scss:public/css & nodejs server.js"
   },
   "dependencies": {
@@ -12,5 +12,5 @@
     "nocache": "^3.0.1",
     "socket.io": "^2.2.0"
   },
-  "keywords": []
+  "keywords": ['nodejs','express','socket.io']
 }
