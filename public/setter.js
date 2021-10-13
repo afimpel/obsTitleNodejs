@@ -46,6 +46,7 @@ btn.addEventListener('click', env => {
   let radioName = '';
   let radioValue = '';
   let datasend = __dataemit__.map(x => {
+    let __value = x.value;
     switch (x.type) {
       case 'checkbox':
         dataemit[x.id] = x.checked;
@@ -56,10 +57,11 @@ btn.addEventListener('click', env => {
         break;
       default:
         dataemit[x.id] = x.value;
+        x.value = ""
     }
 
     return {
-      value: x.value,
+      value: __value,
       name: x.name,
       id: x.id,
       className: x.className,
