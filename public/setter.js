@@ -56,6 +56,7 @@ btn.addEventListener('click', env => {
         break;
       default:
         dataemit[x.id] = x.value;
+        x.value="";
     }
 
     return {
