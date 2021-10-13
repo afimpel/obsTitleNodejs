@@ -16,10 +16,10 @@ let output = document.querySelector('#output');
 titleChecked.addEventListener('click', env => {
   if (!titleChecked.checked) {
     titleBox.classList.add('hide');
+    socket.emit('titleChecked', false);
   } else {
     titleBox.classList.remove('hide');
   }
-  socket.emit('titleChecked', titleChecked.checked);
 });
 
 clockChecked.addEventListener('click', env => {
@@ -69,6 +69,7 @@ btn.addEventListener('click', env => {
     };
   });
   dataemit[radioName] = radioValue;
+  socket.emit('titleChecked', true);
 
   socket.emit('master', {
     ...dataemit,

@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Coda:wght@400;800&family=VT323&display=swap");
 
 body {
-    font-family: "VT323", monospace;
+    font-family: monospace;
     padding: 0;
-    font-size: 26px;
+    font-size: 20px;
 }
 //    font-family: "Coda", cursive;
 h1,
@@ -20,7 +20,7 @@ img {
     display: none !important;
 }
 .containerGraf {
-    min-height: 10rem;
+    min-height: 13rem;
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -36,15 +36,16 @@ img {
         grid-template-rows: auto 34px;
         #grafMaster {
             margin-left: 1rem;
+            margin-bottom: 0.25rem;
             display: grid;
             align-content: stretch;
-            grid-template-rows: 24px auto;
+            grid-template-rows: 32px auto;
             transition-timing-function: ease-out;
             header {
-                padding: 5px 12px;
+                padding: 5px 12px 10px;
                 margin-right: 10rem;
                 border-radius: 12px 24px 0 0;
-                font-size: 16px;
+                font-size: 20px;
             }
             section {
                 border-radius: 0 12px 0 12px;
@@ -52,15 +53,15 @@ img {
                     border-radius: 0 12px 0 12px;
                     padding: 2px 12px;
                     font-size: 40px;
-                    background-color: rgba(0, 0, 0, 0.1);
+                    background-color: rgba(0, 0, 0, 0.4);
                     text-transform: uppercase;
                     font-weight: 100;
                     text-shadow: 1px 1px 2px #000, -1px -1px 2px #000, -1px 1px 2px #000, 1px -1px 2px #000;
                 }
                 p {
-                    padding: 0 12px;
+                    padding: 5px 12px;
                     font-family: "Coda", monospace;
-                    font-size: 18px;
+                    font-size: 22px;
                 }
             }
         }
@@ -73,12 +74,18 @@ img {
                 i {
                     padding: 0 1rem;
                     font-weight: bolder;
-                    text-shadow: 1px 1px 2px #000, -1px -1px 2px #000;
+                    text-shadow: 1px 1px 2px #000, -1px -1px 2px #fff, -1px 1px 2px #fff, 1px -1px 2px #000;
                     color: white;
+                    em {
+                        font-style: normal;
+                        margin: auto 0.2rem;
+                    }
                 }
             }
             #live {
-                --notchSize: 0.25rem;
+                border: 1px solid darkred;
+                margin-top: -0.25rem;
+                --notchSize: 0.5rem;
                 clip-path: polygon(
                     0% 0,
                     0 0%,
@@ -89,6 +96,7 @@ img {
                     var(--notchSize) 100%,
                     0% calc(100% - var(--notchSize))
                 );
+                font-size: 26px;
                 font-family: "Coda", monospace;
                 margin-left: 1rem;
                 padding: 0px 25px;
@@ -106,6 +114,8 @@ img {
     }
     #logo {
         margin: 1rem;
+        width: 128px;
+        height: 128px;
     }
 }
 .green {
@@ -186,4 +196,41 @@ img {
             color: orange !important;
         }
     }
+}
+.images {
+    section {
+        box-shadow: 9px 8px 10px -1px rgba(0, 104, 0, 0.5);
+        border-top: 1px solid darkgreen;
+    }
+    header {
+        background: linear-gradient(90deg, rgba(0, 104, 0, 0.8) 80%, rgba(0, 104, 0, 0.25) 100%);
+        text-shadow: 1px 1px 1px darkgreen, -1px -1px 1px darkgreen, -1px 1px 1px darkgreen, 1px -1px 1px darkgreen;
+        color: white;
+    }
+    section {
+        background: url("../sessionStart_graf0.png");
+        background-size: cover;
+        color: white;
+        h1 {
+            border-bottom: 1px solid darkgreen;
+            color: cyan;
+        }
+    }
+    .social {
+        color: darkgrey;
+        opacity: .85;
+        i {
+            color: lightblue !important;
+            em {
+                color: cyan !important;
+            }
+        }
+    }
+}
+.logoNormal {
+    background-image: url(../sessionStart.png);
+}
+.logoOff {
+    opacity: 0.5;
+    background-image: url(../sessionStart_open.png);
 }

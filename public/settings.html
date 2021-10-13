@@ -1,134 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>Title OBS > Settings</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Title OBS > Settings</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
 
-    <link rel="stylesheet" href="css/main.css" />
-  </head>
-
-  <body>
-    color
-    <label
-      ><input
-        class="dataemit"
-        type="radio"
-        name="color"
-        id="color"
-        value="green"
-        checked
-      />
-      Green</label
-    >
-    <label
-      ><input
-        class="dataemit"
-        type="radio"
-        name="color"
-        id="color"
-        value="red"
-      />
-      red</label
-    >
-    <label
-      ><input
-        class="dataemit"
-        type="radio"
-        name="color"
-        id="color"
-        value="gray"
-      />
-      gray</label
-    >
-    <label
-      ><input
-        class="dataemit"
-        type="radio"
-        name="color"
-        id="color"
-        value="blue"
-      />
-      blue</label
-    >
-    <hr />
-    <label>
-      <input
-        class="dataemit"
-        value="logo"
-        type="checkbox"
-        name="logoChecked"
-        id="logoChecked"
-        checked
-      />
-      LOGO
-    </label>
-    <label>
-      <input
-        class="dataemit"
-        value="live"
-        type="checkbox"
-        name="liveChecked"
-        id="liveChecked"
-      />
-      Vivo
-    </label>
-    <label
-      ><input
-        class="dataemit"
-        value="title"
-        type="checkbox"
-        name="titleChecked"
-        id="titleChecked"
-      />
-      Titulo
-    </label>
-    <label
-      ><input
-        class="dataemit"
-        value="clock"
-        type="checkbox"
-        name="clockChecked"
-        id="clockChecked"
-      />
-      reloj
-    </label>
-    <div id="titleBox">
-      <input
-        style="display: block; width: 99%"
-        class="dataemit"
-        type="text"
-        id="pretitleText"
-        placeholder="preTitulo"
-      />
-      <input
-        style="display: block; width: 99%"
-        class="dataemit"
-        type="text"
-        id="titleText"
-        placeholder="Titulo"
-      />
-      <input
-        style="display: block; width: 99%"
-        class="dataemit"
-        type="text"
-        id="pompadour"
-        placeholder="bajada"
-      />
-      <button style="display: block; width: 99%" id="send" value="send">
-        Enviar
-      </button>
+<body>
+  color
+  <label><input class="dataemit" type="radio" name="color" id="color" value="green" />
+    Green</label>
+  <label><input class="dataemit" type="radio" name="color" id="color" value="red" />
+    red</label>
+  <label><input class="dataemit" type="radio" name="color" id="color" value="gray" />
+    gray</label>
+  <label><input class="dataemit" type="radio" name="color" id="color" value="blue" />
+    blue</label>
+  <label><input class="dataemit" type="radio" name="color" id="color" value="images" checked />
+    images</label>
+  <hr />
+  <label>
+    <input class="dataemit" value="logo" type="checkbox" name="logoChecked" id="logoChecked" checked />
+    LOGO
+  </label>
+  <label>
+    <input class="dataemit" value="live" type="checkbox" name="liveChecked" id="liveChecked" />
+    Vivo
+  </label>
+  <label><input class="dataemit" value="title" type="checkbox" name="titleChecked" id="titleChecked" />
+    Titulo
+  </label>
+  <label><input class="dataemit" value="clock" type="checkbox" name="clockChecked" id="clockChecked" />
+    reloj
+  </label>
+  <div id="titleBox" class="hide">
+    <input style="display: block; width: 99%" class="dataemit" type="text" id="pretitleText" placeholder="preTitulo" />
+    <input style="display: block; width: 99%" class="dataemit" type="text" id="titleText" placeholder="Titulo" />
+    <input style="display: block; width: 99%" class="dataemit" type="text" id="pompadour" placeholder="bajada" />
+    <button style="display: block; width: 99%" id="send" value="send">
+      Enviar
+    </button>
+  </div>
+  <div id="result">
+    <div id="feedback"></div>
+    <div id="output">
+      <!--output here-->
     </div>
-    <div id="result">
-      <div id="feedback"></div>
-      <div id="output"><!--output here--></div>
-    </div>
-    <script src="io.js"></script>
-    <script src="setter.js"></script>
-  </body>
+  </div>
+  <script src="io.js"></script>
+  <script src="setter.js"></script>
+</body>
+
 </html>

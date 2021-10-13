@@ -36,9 +36,11 @@ socket.on('liveChecked', data => {
 });
 socket.on('logoChecked', data => {
   if (!data) {
-    logo.classList.add('hide');
+    logo.classList.remove('logoNormal');
+    logo.classList.add('logoOff');
   } else {
-    logo.classList.remove('hide');
+    logo.classList.add('logoNormal');
+    logo.classList.remove('logoOff');
   }
 });
 
