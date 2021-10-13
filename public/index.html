@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Title OBS</title>
-    <script
-      src="https://kit.fontawesome.com/635afe7c73.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="css/title.css" />
-  </head>
 
-  <body>
-    <div class="containerGraf">
-      <div id="subContainerGraf" class="green">
-        <div id="grafMaster" class="hide">
-          <header id="pretitleText">pretitleText</header>
-          <section>
-            <h1 id="title">title</h1>
-            <p id="pompadour">pompadour</p>
-          </section>
-        </div>
-        <footer>
-          <span class="social">
-            <i class="fab fa-twitter"> @afimpel</i> |
-            <i class="fas fa-globe"> code.afimpel.com</i> |
-            <i class="fab fa-github"> /afimpel</i> |
-            <i class="fab fa-youtube"> Session Start</i>
-          </span>
-          <div id="digital-clock"></div>
-          <span id="live" class="hide">VIVO</span>
-        </footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Title OBS</title>
+  <script src="https://kit.fontawesome.com/635afe7c73.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/title.css" />
+</head>
+
+<body>
+  <div class="containerGraf" id="containerGraf">
+    <div id="subContainerGraf" class="images">
+      <div id="grafMaster" class="hide">
+        <header id="pretitleText">pretitleText</header>
+        <section>
+          <h1 id="title">title</h1>
+          <p id="pompadour">pompadour</p>
+        </section>
       </div>
-      <img src="./robot.png" alt="" id="logo" />
+      <footer>
+        <span class="social">
+          <i class="fab fa-twitter"> <em>@afimpel</em></i> |
+          <i class="fas fa-globe"> <em>code.afimpel.com</em></i> |
+          <i class="fab fa-github"> <em>/afimpel</em></i> |
+          <i class="fab fa-youtube"> <em>Session Start</em></i>
+        </span>
+        <div id="digital-clock"></div>
+        <span id="live" class="hide">VIVO</span>
+      </footer>
     </div>
-    <script src="io.js"></script>
-    <script src="getter.js"></script>
-  </body>
+    <div class="logoNormal" alt="" id="logo" />
+  </div>
+  <script src="io.js"></script>
+  <script src="getter.js"></script>
+</body>
+
 </html>
