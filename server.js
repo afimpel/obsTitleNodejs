@@ -23,31 +23,19 @@ app.use(express.static("public"));
 io.on("connection", (socket) => {
   console.log("[connected]\t", socket.handshake.headers.referer);
 
-  socket.on("grafMaster", (msg) => {
-    io.emit("grafMaster", msg);
-  });
-  socket.on("titleChecked", (msg) => {
-    io.emit("titleChecked", msg);
-  });
-  socket.on("liveChecked", (msg) => {
-    io.emit("liveChecked", msg);
-  });
-  socket.on("logoChecked", (msg) => {
-    io.emit("logoChecked", msg);
-  });
-  socket.on("colorChange", (msg) => {
-    io.emit("colorChange", msg);
-  });
-  socket.on("clockChecked", (msg) => {
-    io.emit("clockChecked", msg);
-  });
   socket.on('disconnect', function (e) {
     console.log("[disconnected]\t", socket.handshake.headers.referer);
   });
 
   socket.onAny((eventName, data) => {
+    io.emit(eventName, data);
     console.log("[" + eventName + "]\t", data);
   });
+});
+
+http.listen(port, () => {
+  console.log(`[running]\thttp://localhost:${port}/`);
+  open(`http://localhost:${port}/settings.html`);
 });
 
 http.listen(port, () => {

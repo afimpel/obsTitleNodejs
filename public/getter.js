@@ -5,9 +5,20 @@ let pretitleTextNO = document.querySelector("#pretitleTextNO");
 let title = document.querySelector('#title');
 let pompadourText = document.querySelector('#pompadourText');
 let live = document.querySelector('#live');
+let social = document.querySelector('#social');
 let logo = document.querySelector('#logo');
 let subContainerGraf = document.querySelector('#subContainerGraf');
 let intervals;
+
+function toogle(obj,estado) {
+  if(estado){
+    obj.add('visible');
+    obj.remove('hidden');
+  }else{
+    obj.add('hidden');
+    obj.remove('visible');
+  }
+}
 
 socket.on('grafMaster', data => {
   pretitleText.innerHTML = data.pretitleText;
@@ -27,20 +38,27 @@ socket.on('grafMaster', data => {
   pompadourText.innerHTML = data.pompadourText;
 });
 
+socket.on("socialData",data =>{
+  //<i class="fab fa-twitter"> <em>@afimpel</em></i>
+  let data2 = data.map(x =>{
+    let icons = document.createElement('i');
+    icons.className = x.icons;
+    icons.innerHTML = '<em>'+x.name+"</em>";
+    return icons.outerHTML;
+  })
+  social.innerHTML= data2.join("|");
+})
+
+
 socket.on('titleChecked', data => {
-  if (!data) {
-    grafMaster.classList.add('hide');
-  } else {
-    grafMaster.classList.remove('hide');
-  }
+  toogle(grafMaster.classList, data);
 });
 
 socket.on('liveChecked', data => {
-  if (!data) {
-    live.classList.add('hide');
-  } else {
-    live.classList.remove('hide');
-  }
+  toogle(live.classList, data);
+});
+socket.on('socialChecked', data => {
+  toogle(social.classList, data);
 });
 socket.on('logoChecked', data => {
   if (!data) {
@@ -58,15 +76,14 @@ socket.on('colorChange', data => {
 
 socket.on('clockChecked', data => {
   if (data) {
-    document.getElementById('digital-clock').classList.remove('hide');
     intervals = setInterval(function () {
       currentTime = getDateTime();
       document.getElementById('digital-clock').innerHTML = currentTime;
     }, 1000);
   } else {
-    document.getElementById('digital-clock').classList.add('hide');
     clearInterval(intervals);
   }
+  toogle(document.getElementById('digital-clock').classList, data);
 });
 
 function getDateTime() {

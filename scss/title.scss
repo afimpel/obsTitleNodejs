@@ -17,12 +17,41 @@ img {
     margin: 0px;
 }
 .logoNormal {
-    background-image: url(../robot.png);
+    transition: opacity 1s ease-in;
+    opacity: 1;
+    background-image: url(../logoOn.png);
 }
-.logoOff,
+.logoOff{
+    opacity: 0.15;
+    transition: opacity 2s linear;
+    background-image: url(../logoOff.png);    
+}
 .hide {
+    transition: display 5s;
     display: none !important;
 }
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 5s, opacity 2s linear;
+}
+.visible {
+    transition: visibility 2s, opacity 1s ease-in;
+    visibility: visible;
+    opacity: 1;
+}
+.containerGraf.left{
+    grid-template-columns: 10rem auto;
+    #grafMaster{
+        margin-left: 0 !important;
+        margin-right: 1rem;
+    }
+    footer{
+        margin-right: 1rem;
+        flex-direction: row-reverse;
+    }
+}
+
 .containerGraf {
     min-height: 13rem;
     position: absolute;
@@ -82,7 +111,7 @@ img {
                     color: white;
                     em {
                         font-style: normal;
-                        margin: auto 0.2rem;
+                        margin: auto 0.5rem;
                     }
                 }
             }
@@ -139,7 +168,7 @@ img {
     .social {
         color: green;
         i {
-            color: lightyellow !important;
+            color: greenyellow !important;
             em {
                 color: yellow !important;
             }

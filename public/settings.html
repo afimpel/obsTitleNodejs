@@ -12,44 +12,75 @@
 </head>
 
 <body>
-  <i class="fas fa-palette"></i>
-  color
-  <label><input class="dataemit" type="radio" name="color" id="color" value="green" checked />
-    Green</label>
-  <label><input class="dataemit" type="radio" name="color" id="color" value="red" />
-    red</label>
-  <label><input class="dataemit" type="radio" name="color" id="color" value="gray" />
-    gray</label>
-  <label><input class="dataemit" type="radio" name="color" id="color" value="blue" />
-    blue</label>
+  <div class="gridColor">
+    <i class="fas fa-palette green"> Color :</i>
+    <label class="green"><input type="radio" name="color" id="color" value="green" checked />
+      Green</label>
+    <label class="red"><input type="radio" name="color" id="color" value="red" />
+      red</label>
+    <label class="gray"><input type="radio" name="color" id="color" value="gray" />
+      gray</label>
+    <label class="blue"><input type="radio" name="color" id="color" value="blue" />
+      blue</label>
+  </div>
   <hr />
   <label>
-    <input class="dataemit" value="logo" type="checkbox" name="logoChecked" id="logoChecked" checked />
+    <input value="logo" type="checkbox" name="logoChecked" id="logoChecked" checked />
     <i class="fas fa-eye"></i> LOGO
   </label>
   <label>
-    <input class="dataemit" value="live" type="checkbox" name="liveChecked" id="liveChecked" />
+    <input value="live" type="checkbox" name="liveChecked" id="liveChecked" />
     <i class="fas fa-tv"></i> Vivo
   </label>
-  <label><input class="dataemit" value="title" type="checkbox" name="titleChecked" id="titleChecked" />
+  <label><input value="title" type="checkbox" name="titleChecked" id="titleChecked" />
     <i class="fas fa-heading"></i> Titulo
   </label>
-  <label><input class="dataemit" value="clock" type="checkbox" name="clockChecked" id="clockChecked" />
+  <label><input value="clock" type="checkbox" name="clockChecked" id="clockChecked" />
     <i class="far fa-clock"></i> reloj
   </label>
+  <label><input value="clock" type="checkbox" name="socialChecked" id="socialChecked" />
+    <i class="fab fa-youtube"></i> social
+  </label>
   <div id="titleBox" class="hide">
-    <input style="display: block; width: 99%" class="dataemit" type="text" id="pretitleText" placeholder="preTitulo" />
-    <input style="display: block; width: 99%" class="dataemit" type="text" id="titleText" placeholder="Titulo" />
-    <input style="display: block; width: 99%" class="dataemit" type="text" id="pompadourText" placeholder="bajada" />
-    <button style="display: block; width: 99%" id="send" value="send">
+    <h2 class="title">
+      <i class="fas fa-heading"></i>
+      Titulo
+    </h2>
+    <div style="display: flex; flex-direction: column;">
+      <input class="dataemit" type="text" id="pretitleText" placeholder="preTitulo" />
+      <input class="dataemit" type="text" id="titleText" placeholder="Titulo" />
+      <input class="dataemit" type="text" id="pompadourText" placeholder="bajada" />
+    </div>
+    <button style="width: 100%" id="send" value="send">
       Enviar
     </button>
   </div>
-  <div id="result">
-    <div id="feedback"></div>
-    <div id="output">
-      <!--output here-->
+  <div id="socialBox" class="hide">
+    <h2 class="title">
+      <i class="fab fa-youtube"></i>
+      Social
+      <button id="addSocial" value="+">+</button>
+    </h2>
+    <div id="socialGroup">
+      <div class="gridSocial" id="soc001">
+        <i style="text-align: center;" id="socialIconsFa" class="fab fa-youtube"></i>
+        <select id="socialIcons" class="socialemit">
+          <option value="fab fa-youtube">YouTube</option>
+          <option value="fab fa-twitter">twitter</option>
+          <option value="fab fa-twitch">twitch</option>
+          <option value="fab fa-github">github</option>
+          <option value="fab fa-gitlab">gitlab</option>
+          <option value="fas fa-globe">WWW</option>
+        </select>
+        <input class="socialemit" type="text" id="red" placeholder="usuario" />
+      </div>
     </div>
+    <button style="width: 100%" id="sendSocial" value="send">
+      Enviar
+    </button>
+  </div>
+  <div id="output">
+    <!--output here-->
   </div>
   <script src="/socket.io/socket.io.js"></script>
   <script src="setter.js"></script>
