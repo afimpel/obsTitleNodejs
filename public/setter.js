@@ -81,7 +81,6 @@ btn.addEventListener('click', env => {
   let ls = true;
   __dataemit__.map(x => {
     dataemit[x.id] = x.value;
-
     if(x.value === "" && x.id === "pompadourText"){
       ls = false;
     }

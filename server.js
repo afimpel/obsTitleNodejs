@@ -37,3 +37,8 @@ http.listen(port, () => {
   console.log(`[running]\thttp://localhost:${port}/`);
   open(`http://localhost:${port}/settings.html`);
 });
+
+http.listen(port, () => {
+  console.log(`Socket.IO server running at http://localhost:${port}/`);
+  open(`http://localhost:${port}/settings.html`);
+});
