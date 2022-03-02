@@ -6,8 +6,11 @@ body {
     font-family: Verdana;
     border: 1px solid black;
     min-height: 10rem;
-    font-size: 12px;
+    font-size: 16px;
 
+    #output {
+        white-space: pre-wrap;
+    }
     #feedback {
         border: 1px solid black;
         margin: 1px;

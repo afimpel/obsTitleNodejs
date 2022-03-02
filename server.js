@@ -1,50 +1,56 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const socket = require('socket.io');
+const http = require("http").Server(app);
+const io = require("socket.io")(http);
+const open = require("open");
+const port = process.env.PORT || 3000;
+const sassMiddleware = require("node-sass-middleware");
 const nocache = require('nocache');
-
-const port = 9090;
-let server = app.listen(port, function () {
-  console.log('listening on ', port);
-});
-
 app.use(nocache());
 
-app.use(express.static('public'));
+app.use(
+  sassMiddleware({
+    src: __dirname + "/scss", //where the sass files are
+    dest: __dirname + "/public/css", //where css should go
+    outputStyle: "compressed",
+    prefix: "/css",
+    debug: true, // obvious
+  })
+);
 
-let io = socket(server);
+app.use(express.static("public"));
 
-io.on('connection', function (socket) {
-  console.log('someone connected');
+io.on("connection", (socket) => {
+  console.log("[connected]\t", socket.handshake.headers.referer);
 
-  socket.on('master', function (data) {
-    io.sockets.emit('master', data);
+  socket.on("grafMaster", (msg) => {
+    io.emit("grafMaster", msg);
+  });
+  socket.on("titleChecked", (msg) => {
+    io.emit("titleChecked", msg);
+  });
+  socket.on("liveChecked", (msg) => {
+    io.emit("liveChecked", msg);
+  });
+  socket.on("logoChecked", (msg) => {
+    io.emit("logoChecked", msg);
+  });
+  socket.on("colorChange", (msg) => {
+    io.emit("colorChange", msg);
+  });
+  socket.on("clockChecked", (msg) => {
+    io.emit("clockChecked", msg);
+  });
+  socket.on('disconnect', function (e) {
+    console.log("[disconnected]\t", socket.handshake.headers.referer);
   });
 
-  socket.on('titleChecked', function (checked) {
-    console.log('checked: titleChecked :>> ', checked);
-    socket.broadcast.emit('titleChecked', checked);
+  socket.onAny((eventName, data) => {
+    console.log("[" + eventName + "]\t", data);
   });
+});
 
-  socket.on('liveChecked', function (checked) {
-    console.log('checked: liveChecked :>> ', checked);
-    socket.broadcast.emit('liveChecked', checked);
-  });
-  socket.on('logoChecked', function (checked) {
-    console.log('checked: logoChecked :>> ', checked);
-    socket.broadcast.emit('logoChecked', checked);
-  });
-
-  socket.on('colorChange', function (checked) {
-    console.log('change: colorChange :>> ', checked);
-    socket.broadcast.emit('colorChange', checked);
-  });
-  socket.on('clockChecked', function (checked) {
-    console.log('checked: clockChecked :>> ', checked);
-    socket.broadcast.emit('clockChecked', checked);
-  });
-
-  socket.on('disconnect', function () {
-    console.log('someone disconnected');
-  });
+http.listen(port, () => {
+  console.log(`Socket.IO server running at http://localhost:${port}/`);
+  open(`http://localhost:${port}/settings.html`);
 });

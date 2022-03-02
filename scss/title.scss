@@ -45,7 +45,7 @@ img {
             align-content: stretch;
             grid-template-rows: 32px auto;
             transition-timing-function: ease-out;
-            header {
+            #pretitleText {
                 padding: 5px 12px 10px;
                 margin-right: 10rem;
                 border-radius: 12px 24px 0 0;
@@ -127,7 +127,7 @@ img {
         box-shadow: 9px 8px 10px -1px #00ff0078;
         border-top: 1px solid green;
     }
-    header,
+    #pretitleText,
     section {
         background: rgb(153, 205, 50);
         background: linear-gradient(90deg, rgba(153, 205, 50, 0.8) 80%, rgba(18, 26, 2, 0.25) 100%);
@@ -151,7 +151,7 @@ img {
         box-shadow: 9px 8px 10px -1px #00000078;
         border-top: 1px solid black;
     }
-    header,
+    #pretitleText,
     section {
         background: rgb(68, 68, 68);
         background: linear-gradient(90deg, rgba(68, 68, 68, 0.8) 80%, rgba(0, 0, 0, 0.25) 100%);
@@ -166,7 +166,7 @@ img {
         box-shadow: 9px 8px 10px -1px #0000ff78;
         border-top: 1px solid blue;
     }
-    header,
+    #pretitleText,
     section {
         background: rgb(50, 50, 205);
         background: linear-gradient(90deg, rgba(50, 50, 205, 0.8) 80%, rgba(8, 8, 50, 0.25) 100%);
@@ -191,7 +191,7 @@ img {
         box-shadow: 9px 8px 10px -1px #ff000078;
         border-top: 1px solid red;
     }
-    header,
+    #pretitleText,
     section {
         background: rgb(205, 50, 50);
         background: linear-gradient(90deg, rgba(205, 50, 50, 0.8) 80%, rgba(57, 9, 9, 0.25) 100%);

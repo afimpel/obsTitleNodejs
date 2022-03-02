@@ -49,7 +49,6 @@ btn.addEventListener('click', env => {
     let __value = x.value;
     switch (x.type) {
       case 'checkbox':
-        dataemit[x.id] = x.checked;
         break;
       case 'radio':
         radioName = x.checked ? x.id : radioName;
@@ -73,21 +72,12 @@ btn.addEventListener('click', env => {
   dataemit[radioName] = radioValue;
   socket.emit('titleChecked', true);
 
-  socket.emit('master', {
+  socket.emit('grafMaster', {
     ...dataemit,
-    datasend,
-    dataemit,
   });
 });
 
-socket.on('master', data => {
-  output.innerHTML +=
-    '<p>pretitle: ' +
-    data.pretitleText +
-    '<br>title: ' +
-    data.titleText +
-    '<br>pompadour: ' +
-    data.pompadour +
-    '</p>';
-  feedback.innerHTML = '';
+socket.onAny((eventName, data) => {
+  output.innerHTML = eventName + ": " + JSON.stringify(data, null, " ");
+  feedback.innerHTML = "";
 });
