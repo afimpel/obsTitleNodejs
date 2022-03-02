@@ -1,22 +1,30 @@
 let socket = io();
 let grafMaster = document.querySelector('#grafMaster');
 let pretitleText = document.querySelector('#pretitleText');
+let pretitleTextNO = document.querySelector("#pretitleTextNO");
 let title = document.querySelector('#title');
-let pompadour = document.querySelector('#pompadour');
+let pompadourText = document.querySelector('#pompadourText');
 let live = document.querySelector('#live');
 let logo = document.querySelector('#logo');
 let subContainerGraf = document.querySelector('#subContainerGraf');
 let intervals;
 
-socket.on('master', data => {
+socket.on('grafMaster', data => {
   pretitleText.innerHTML = data.pretitleText;
+  if (data.pretitleText.length < 1) {
+    pretitleTextNO.classList.remove('hide');
+    pretitleText.classList.add('hide');
+  } else {
+    pretitleTextNO.classList.add('hide');
+    pretitleText.classList.remove('hide');
+  }
   if (data.titleText.length < 1) {
     title.classList.add('hide');
   } else {
     title.classList.remove('hide');
   }
   title.innerHTML = data.titleText;
-  pompadour.innerHTML = data.pompadour;
+  pompadourText.innerHTML = data.pompadourText;
 });
 
 socket.on('titleChecked', data => {
