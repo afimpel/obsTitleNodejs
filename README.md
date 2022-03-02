@@ -12,4 +12,4 @@ web app para el obs Studio / socket.io / Express / SASS / NodeJS
 * npm i
 * **npm start**
 * se te va automaticamente tu navegador prederterminado **[Configurador](http://localhost:3000/settings.html)**
-* Abrir **OBS** añadir a Fuente **Navegador WEB** e incluir en url: http://localhost:3000/
+* Abrir **OBS** añadir a Fuente **Navegador WEB** e incluir en url: http://localhost:3000/ (Modo logo derecha) o http://localhost:3000/left.html (Modo logo Izquierda)
